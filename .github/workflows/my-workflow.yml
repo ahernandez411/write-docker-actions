@@ -9,10 +9,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
 
-      - name: hello-action
-        uses: ./.github/actions/hello-world
+    - name: hello-action
+      uses: ./.github/actions/hello-world
 
-      - name: funny-cats
-        uses: ./.github/actions/cat-facts
+    - name: funny-cats
+      uses: ./.github/actions/cat-facts
+      id: cat
+
+    - name: create-issue
+      uses: ./.github/actions/issue-maker
+      with:
+        repoToken: ${{ secrets.GITHUB_TOKEN }}
+        catFact: ${{ steps.cat.outputs.fact }}
+        issueTitle: a cat fact for you
