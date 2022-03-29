@@ -1,15 +1,11 @@
-# name: Docker Actions
+name: my cat fact action
 
-# on: [push]
+description: Get external data with github actions
 
-# jobs:
-#   action:
-#     runs-on: ubuntu-latest
+outputs:
+  fact:
+    description: Resulting cat fact from the https://cat-fact.herokuapp.com/facts api
 
-#     steps:
-#     - uses: actions/checkout@v1
-
-#     - name: hello-action
-#       uses: ./.github/actions/hello-world
-#       with:
-#         firstGreeting: "Learning Lab User"
+runs:
+  using: docker
+  image: Dockerfile
