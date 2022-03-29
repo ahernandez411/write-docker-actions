@@ -9,5 +9,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - uses: hello-action
+    - name: hello-action
       uses: ./.github/actions/hello-world
+      with:
+        firstGreeting: "Learning Lab User"
