@@ -2,6 +2,21 @@ name: my hello action
 
 description: say hello with github actions
 
+inputs:
+  firstGreeting:
+    description: greet 1
+    required: true
+    default: Archie
+
+  secondGreeting:
+    description: greet 2
+    required: true
+    default: Nintendo Switch
+
+  thirdGreeting:
+    description: greet 3
+    required: false
+
 runs:
   using: docker
   image: Dockerfile
