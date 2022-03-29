@@ -1,0 +1,22 @@
+name: issue maker
+
+description: create and issue cat fact as the body
+
+inputs:
+  issueTitle:
+    description: A name for the issue
+    required: true
+    default: cat fact for you
+
+  catFact:
+    description: cat fact from previous action
+    required: true
+    default: Archie (not a cat)
+
+  repoToken:
+    description: auth token, use secrets.GITHUB_TOKEN
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
