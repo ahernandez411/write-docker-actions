@@ -12,7 +12,8 @@ for fact in results:
     fact_list.append(fact.get("text"))
 
 def select_random_fact(facts):
-    return facts[random.randint(0, len(fact_list)+1)]
+    random_index = random.randint(0, len(fact_list))
+    return facts[random_index]
 
 random_fact = select_random_fact(fact_list)
 
